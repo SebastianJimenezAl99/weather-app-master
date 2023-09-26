@@ -71,22 +71,22 @@ function App() {
         <div className='contenedor-3'>
           <div className='mini-conter-3'>
             <h2>Wind status</h2>
-            <p>{weatherData.wind.speed} mph</p>
+            <p>{weatherData ? weatherData.wind.speed : ""} mph</p>
             <span> WSW</span>
 
           </div>
           <div className='mini-conter-3'>
             <h2>Visibility</h2>
-            <p>{(weatherData.visibility/1000)} miles</p>
+            <p>{weatherData ? (weatherData.visibility/1000): ""} miles</p>
           </div>
           <div className='mini-conter-3'>
             <h2>Humidity</h2>
-            <p>{weatherData.main.humidity} %</p>
+            <p>{weatherData ? weatherData.main.humidity:""} %</p>
 
           </div>
           <div className='mini-conter-3'>
             <h2>Air Pressure</h2>
-            <p>{weatherData.main.pressure} mb</p>
+            <p>{weatherData ? weatherData.main.pressure:""} mb</p>
           </div>
 
         </div>
