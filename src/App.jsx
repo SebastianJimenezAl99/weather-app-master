@@ -58,13 +58,38 @@ function App() {
     <div className='contenedor-principal'>
       <ClimaActual data={weatherData} funCiudad={actualizarCiudad} />
       <div className='contenedor-2'>
-      {
-        otherData ? (
-          otherData.map((el,i)=>(
-            <CardWeather data={el} key={i} index={i}/>
-          )) 
-        ):"" 
-      }  
+        <div className='contenedor-2_1'>
+        {
+          otherData ? (
+            otherData.map((el,i)=>(
+              <CardWeather data={el} key={i} index={i}/>
+            )) 
+          ):"" 
+        }
+        </div>
+        <h1 className='h1-principal'>Todays Hightlights</h1>
+        <div className='contenedor-3'>
+          <div className='mini-conter-3'>
+            <h2>Wind status</h2>
+            <p>{weatherData.wind.speed} mph</p>
+            <span> WSW</span>
+
+          </div>
+          <div className='mini-conter-3'>
+            <h2>Visibility</h2>
+            <p>{(weatherData.visibility/1000)} miles</p>
+          </div>
+          <div className='mini-conter-3'>
+            <h2>Humidity</h2>
+            <p>{weatherData.main.humidity} %</p>
+
+          </div>
+          <div className='mini-conter-3'>
+            <h2>Air Pressure</h2>
+            <p>{weatherData.main.pressure} mb</p>
+          </div>
+
+        </div>
       </div>
     </div>
   )
