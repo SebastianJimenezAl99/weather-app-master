@@ -3,6 +3,23 @@ import "./ClimaActual.css";
 import BuscarClimaCiudad from "../BuscarClimaCiudad/BuscarClimaCiudad";
 
 function ClimaActual(props) {
+    const [ciudades , setCiudades] = useState(["Cartagena", "Medellin", "London" ]);
+
+    function buscarCiudad(ciudad){
+        let array = ciudades;
+        if (ciudad) {
+            if(array.includes(ciudad)) {
+                let i = array.indexOf(ciudad);
+                array.splice(i, 1);
+                array.push(ciudad);
+            }else{
+                array.shift()
+                array.push(ciudad);
+                setCiudades(array);
+            }
+           
+        }
+    }
     //Dclaro variables para mejor funcionamiento
     let temperatura,clima,ciudad,imagen;
     const fechaHoy = obtenerFechaHoy();
@@ -14,7 +31,6 @@ function ClimaActual(props) {
 
     //si la informacion en data existe lo almacena en su variable
     if(props.data){
-        console.log(props.data);
         temperatura =  kelvinACelsius(props.data.main.temp);
         clima = props.data.weather[0].main;
         ciudad = props.data.name;
@@ -36,18 +52,29 @@ function ClimaActual(props) {
     if(buscador){
         return(
             <div className="ClimaActual-contenedor">
-                <BuscarClimaCiudad funEstadoBuscador={cambiarEstadoBuscador} funCiudad={props.funCiudad} />
+                <BuscarClimaCiudad 
+                funEstadoBuscador={cambiarEstadoBuscador} 
+                funCiudad={props.funCiudad} 
+                funBuscarCiudad={buscarCiudad}
+                ciudades={ciudades}
+                />
             </div>
         )
     }else{
         return(
         <div className="ClimaActual-contenedor">
-            <button onClick={cambiarEstadoBuscador}>Search for places</button><br />
-            <img src={imagen} alt="" />
-            <p><span>{temperatura}</span>°C</p>
-            <p>{clima}</p>
-            <p>Today - {fechaHoy}</p>
-            <p><i class="fa-solid fa-location-dot"></i> {ciudad}</p>
+            <div className="boton-places">
+                <button onClick={cambiarEstadoBuscador}>Search for places</button>
+            </div>
+            <div className="climaActual-imagen">
+                <img src={imagen} alt="" />
+            </div>
+            <div className="climaActual-info">
+                <p><span className="ClimaActual-temperatura-numero">{temperatura}</span><span className="ClimaActual-temperatura-letra">°C</span></p>
+                <p className="climaActual-tipoClima">{clima}</p>
+                <p className="climaActual-fecha">Today - {fechaHoy}</p>
+                <p className="climaActual-nombre-ciudad"><i className="fa-solid fa-location-dot"></i> {ciudad}</p>
+            </div>
         </div>
     )
     }

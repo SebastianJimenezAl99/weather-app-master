@@ -1,0 +1,93 @@
+*{
+    font-family: Raleway;
+    color: #E7E7EB;
+}
+
+.BuscarClimaCiudad-close{
+    margin-top: 12px;
+    display: flex;
+    justify-content: right;
+}
+
+.BuscarClimaCiudad-close i{
+    width: 32px;
+    height: 32px;
+}
+
+.BuscarClimaCiudad-close i:hover {
+    cursor: pointer;
+    
+}
+.BuscarClimaCiudad-input-botton{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.BuscarClimaCiudad-inputs{
+    border: 1px #E7E7EB solid;
+    width: 268px;
+    margin-right: 5px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    color: #616475;
+}
+
+.BuscarClimaCiudad-inputs input{
+    border: none ;
+    background-color: #f3f3fa00;
+    margin-left: 5px;
+    outline: none; 
+    color: #E7E7EB;
+    font-size: 16px;
+
+}
+
+.BuscarClimaCiudad-inputs i{
+    margin-left: 5px;
+    color: #616475;
+}
+
+.BuscarClimaCiudad-inputs input:focus{
+    border: none ;
+}
+
+.BuscarClimaCiudad-input-botton button{
+    width: 86px;
+    height: 38px;
+    font-size: 16px;
+    color: #E7E7EB;
+    background-color: #3C47E9;
+    border: none;
+
+}
+
+
+.BuscarClimaCiudad-input-botton button:hover{
+    cursor: pointer;
+    background-color: #535df3;
+
+}
+
+
+.BuscarClimaCiudad-resultado{
+    margin-top: 50px;
+    width: 90%;
+    height: 50px;
+    border: 1px #E7E7EB solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+}
+
+.BuscarClimaCiudad-resultado :hover{
+    
+    border: #ffffff;
+    color:  #ffffff;
+    cursor: pointer;
+    
+
+}

@@ -1,6 +1,99 @@
+*{
+    font-family: Raleway;
+}
 .ClimaActual-contenedor{
     min-height: 100vh;
     width: 459px;
     background-color: #1E213A ;
     color: white;
+    display: flex;
+    flex-direction: column; 
+    /* justify-content: space-between; */
+    align-items: center;
 }
+
+
+.boton-places{
+    width: 100%;
+    display: flex;
+    height: 19px;
+    margin-top: 42px;
+}
+
+.boton-places button{
+    
+    margin-left: 46px;
+    width: 161px;
+    height: 40px;
+    background-color: #6E707A;
+    color: #E7E7EB;
+    font-size: 16px;
+    padding: 10px;
+    
+}
+
+.boton-places button:hover{
+    background-color: #888991;
+    cursor: pointer;
+    
+    
+}
+
+
+.climaActual-imagen{
+    height: 376px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.climaActual-imagen img{
+    height: 202px;
+    width: 204px;
+}
+
+.climaActual-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #A09FB1;
+   
+}
+
+.ClimaActual-temperatura-numero{
+    font-size: 144px;
+    color: #E7E7EB;
+}
+
+.ClimaActual-temperatura-letra{
+    font-size: 48px;
+    color: #A09FB1;
+}
+
+.climaActual-tipoClima{
+    font-size: 42px;
+    color: #A09FB1;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.climaActual-fecha{
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.climaActual-nombre-ciudad{
+    font-size: 18px;
+}
+
+
+.BuscarClimaCiudad-contenedor{
+    min-height: 100vh;
+    width: 80%;
+}
+
+
+
+
+

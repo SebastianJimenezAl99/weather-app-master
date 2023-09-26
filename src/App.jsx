@@ -4,12 +4,12 @@ import ClimaActual from './Components/ClimaActual/ClimaActual';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null); // para datos de la api
-  const [ciudad, setCiudad] = useState("ciudad de mexico"); //Para tener informacion de la ciudad
+ 
   const keyApi = "c9144b1482b501560d8aeb4b5b587356"
-  let city = ciudad;
+  
   //Funcion para actualizar data
-  function actualizarData(){
-
+  function actualizarData(citys){
+    let city = citys ? citys : "cartagena";
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyApi}`)
       .then((response) => response.json())
       .then((data) => {
@@ -22,9 +22,8 @@ function App() {
   }
 
   //funcion para actualizar la ciudad
-  function actualizarCiudad(city) {
-    setCiudad(city);
-    actualizarData();
+  function actualizarCiudad(citys) {
+    actualizarData(citys);
   }
 
   useEffect(()=>{
