@@ -1,0 +1,19 @@
+.CardWeather-contenedor{
+    width: 120px;
+    height: 177px;
+    background-color: #1E213A;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+*{
+    font-size: 16px;
+    font-family: Raleway;
+}
+.contenedor-temperatura{
+ width: 70%;
+ display: flex;
+ justify-content: space-between;
+}

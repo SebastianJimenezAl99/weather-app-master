@@ -1,0 +1,12 @@
+.contenedor-principal{
+    display: flex;
+}
+
+.contenedor-2{
+    width: 100%;
+    display: flex;
+    background-color: #100E1D;
+}
+.min-temp{
+    color: #A09FB1;
+}
